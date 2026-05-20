@@ -1,4 +1,4 @@
-# P02 — Dynamic Pricing Optimization (RL)
+# Dynamic Pricing Optimization (RL)
 
 Retail pricing simulation with **Q-Learning** (discrete prices) and **DDPG** (continuous prices, PyTorch), plus a live dashboard, competitor tracker, profitability comparison, and sensitivity analysis.
 
