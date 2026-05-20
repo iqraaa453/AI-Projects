@@ -14,38 +14,13 @@ Retail pricing simulation with **Q-Learning** (discrete prices) and **DDPG** (co
 | `build_dash_data.py` | Merge JSON → `dash_data.json` |
 | `build_dashboard.py` | Build `rl_dashboard.html` |
 | `dashboard_server.py` | Live simulator + competitor tracker (Flask) |
-| `generate_report.py` | Build `REPORT.md` |
 
 ## Quick start (Windows)
 
 ```powershell
-cd "c:\Users\PMLS\Desktop\rl project"
+cd "file-location"
 pip install -r requirements.txt
 run_project.bat
-```
-
-Or step by step:
-
-```powershell
-pip install numpy flask torch
-
-# Step 1 — test environment
-python -c "from env_and_agents import RetailPricingEnv; e=RetailPricingEnv(42); print(e.reset().shape)"
-
-# Full pipeline (Q-Learning + DDPG training, sensitivity, comparison, report)
-python train_all.py
-
-# Or run steps individually:
-python step2_train_ql.py          # Q-Learning training → ql_agent.npz
-# (DDPG trains inside train_all.py — step 3)
-python step5_compare.py           # Comparison → comparison.json
-python build_dash_data.py         # Aggregate JSON → dash_data.json
-python build_dashboard.py         # Build dashboard HTML
-python generate_report.py         # Write REPORT.md
-
-# Live dashboard (real env + trained agents — do NOT open as file://)
-python dashboard_server.py
-# Then open http://127.0.0.1:5050
 ```
 
 ## Assignment mapping
@@ -57,7 +32,6 @@ python dashboard_server.py
 | 3 | DDPG training (PyTorch) | `train_all.py` (Step 3 section) |
 | 4 | Dashboard | `build_dashboard.py` → `rl_dashboard.html` |
 | 5 | Fixed vs Rule vs QL vs DDPG | `step5_compare.py` |
-| 6 | Report + QL & DDPG sensitivity | `generate_report.py` + `REPORT.md` |
 
 ## Environment details
 
@@ -90,7 +64,6 @@ After `python train_all.py`:
 | `sensitivity.json` | 7 Q-Learning hyperparameter configs |
 | `ddpg_sensitivity.json` | 7 DDPG hyperparameter configs |
 | `rl_dashboard.html` | Interactive static dashboard |
-| `REPORT.md` | Full written report with tables |
 
 ## Live dashboard strategies
 
